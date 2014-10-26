@@ -11,6 +11,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="js/randomColor.min.js"></script>
+        <script src="js/alfeo.js"></script>
 		<!-- JAVASCRIPT -->
         
         <!-- 3RD PARTY CSS -->
@@ -42,10 +43,13 @@
                 
                 <div class="controls">
                 
-                    <textarea rows="10"></textarea>
+                    <textarea id="textarea-main" rows="10"></textarea>
                     
-                    <button type="button" onclick="">Button</button>
+                    <button type="button" onclick="javascript:Alfeo.go();">Button</button>
                     
+                </div>
+                <div class="result text-center">
+                    <span class="value"></span>
                 </div>
                 
             </div>
@@ -62,7 +66,6 @@
             
             var color = randomColor({ luminosity: 'light', format: 'hex'});
             document.body.style.backgroundColor = color;
-
             
         </script>
         
