@@ -103,13 +103,32 @@ body .container-fluid .main-content .controls textarea {
   margin-bottom: 10px;
   min-width: 50vw;
 }
-body .container-fluid .main-content .controls button {
+body .container-fluid .main-content .controls .doodads {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   min-width: 15vw;
+}
+body .container-fluid .main-content .result {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  background: rgba(255, 255, 255, 0.85);
+}
+body .container-fluid .main-content .result .prefix {
+  font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+}
+body .container-fluid .main-content .result .value {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 2.25em;
 }
 body .container-fluid .footer {
   margin-left: auto;
@@ -121,7 +140,7 @@ body .container-fluid .footer {
   background: rgba(255, 255, 255, 0.85);
 }
 body .container-fluid .footer .author {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 18px;
 }

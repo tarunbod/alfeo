@@ -42,14 +42,19 @@
             <div class="main-content">
                 
                 <div class="controls">
+                    
+                    <select class="doodads">
+                        <option value="raw_eval">Basic evaluation (Raw JavaScript)</option>
+                    </select>
                 
                     <textarea id="textarea-main" rows="10"></textarea>
                     
-                    <button type="button" onclick="javascript:Alfeo.go();">Button</button>
+                    <button class="doodads" type="button" onclick="javascript:Alfeo.go();">Button</button>
                     
                 </div>
                 <div class="result text-center">
-                    <span class="value"></span>
+                    <span id="result-prefix" class="prefix">Evaluated as: <br></span>
+                    <span id="result-value" class="value">{}</span>
                 </div>
                 
             </div>

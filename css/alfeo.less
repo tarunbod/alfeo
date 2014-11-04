@@ -16,6 +16,8 @@
 @translucent-white2: rgba(255,255,255,0.85);
 @translucent-black2: rgba(80, 80, 80, 0.8);
 
+@native-font: "Helvetica Neue", "Segoe UI", sans-serif;
+
 body {
     overflow-x: hidden;
     color: @text-normal;
@@ -74,7 +76,7 @@ body {
                     min-width: 50vw;
                 }
                 
-                button {
+                .doodads {
                     display: block;
                     margin-left: auto;
                     margin-right: auto;
@@ -88,12 +90,20 @@ body {
                 margin-right: auto;
                 margin-top: 15px;
                 margin-bottom: 0px;
-                padding-top: 25px;
-                padding-bottom: 25px;
+                padding-top: 5px;
+                padding-bottom: 15px;
                 background: @translucent-white2;
                 
+                
+                .prefix {
+                    font-family: @native-font;
+                    font-weight: 400;
+                    font-size: 1.25em;
+                }
                 .value {
-                    //
+                    font-family: "Oswald", sans-serif;
+                    font-weight: 400;
+                    font-size: 2.25em;
                 }
             }
             
@@ -111,7 +121,7 @@ body {
             //min-height: 10vh;
             
             .author {
-                font-family: 'Open Sans', sans-serif;
+                font-family: "Open Sans", sans-serif;
                 font-weight: 700;
                 font-size: 18px; 
                 
