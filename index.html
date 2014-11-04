@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<title>Alfeo</title>
+		
+		<!-- JAVASCRIPT -->
+		<script src="js/acorn_interpreter.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/randomColor.min.js"></script>
+        <script src="js/alfeo.js"></script>
+		<!-- JAVASCRIPT -->
+        
+        <!-- 3RD PARTY CSS -->
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Exo+2:300,400|Open+Sans:700,400|Oswald:400' rel='stylesheet' type='text/css'>
+        <link href="css/sweet-alert.css" rel="stylesheet" type="text/css">
+        <!-- 3RD PARTY CSS -->
+        
+        <!-- CSS -->
+        <link href="css/alfeo.css" rel="stylesheet" type="text/css">
+        <!-- CSS -->
+        
+        
+		
+	</head>
+
+	<body>
+		
+        <div class="container-fluid">
+            <div class="header text-center">
+
+                <h1 class="brand">
+                    Alfeo<br>
+                    <small>A mathematical prototype.</small>
+                </h1>
+                
+            </div>
+            <div class="main-content">
+                
+                <div class="controls">
+                    
+                    <select class="doodads">
+                        <option value="raw_eval">Basic evaluation (Raw JavaScript)</option>
+                    </select>
+                
+                    <textarea id="textarea-main" rows="10"></textarea>
+                    
+                    <button class="doodads" type="button" onclick="javascript:Alfeo.go();">Button</button>
+                    
+                </div>
+                <div class="result text-center">
+                    <span id="result-prefix" class="prefix">Evaluated as: <br></span>
+                    <span id="result-value" class="value">{}</span>
+                </div>
+                
+            </div>
+            
+            <div class="footer text-center">
+                
+                <span class="author">Made with <span class="love">&hearts;</span> and JavaScript by <a href="http://austinj.net/">Austin Jackson</a></span>
+                
+            </div>
+        </div>
+        
+        
+        <script>
+            
+            var color = randomColor({ luminosity: 'light', format: 'hex'});
+            document.body.style.backgroundColor = color;
+            
+        </script>
+        
+        
+	</body>
+
+</html>

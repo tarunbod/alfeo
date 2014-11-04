@@ -1,0 +1,175 @@
+// All site styling is done from here and auto-compiled with...
+// https://github.com/jdiehl/brackets-less-autocompile
+
+@import "mixins.less";
+
+@link-normal: hsl(202, 59%, 48%);
+@link-hover: hsl(202, 58%, 41%);
+@link-active: hsl(347, 61%, 56%);
+
+@text-normal: rgb(50,50,50);
+@text-grey: rgb(100,100,100);
+@text-white: rgb(245,245,245);
+
+@translucent-white: rgba(255,255,255,0.65);
+@translucent-black: rgba(80, 80, 80, 0.65);
+@translucent-white2: rgba(255,255,255,0.85);
+@translucent-black2: rgba(80, 80, 80, 0.8);
+
+@native-font: "Helvetica Neue", "Segoe UI", sans-serif;
+
+body {
+    overflow-x: hidden;
+    color: @text-normal;
+    font-weight: normal;
+
+    a:link, a:visited {
+        color: @link-normal;
+        .color-transition;
+    }
+    a:hover { 
+        color: @link-hover;
+        .color-transition;
+    }
+    a:active {
+        color: @link-active;
+        .color-transition;
+    }
+
+    .container-fluid {
+        padding-right: 0px;
+        padding-left: 0px;
+        
+        .header {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0px;
+            margin-bottom: 15px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            background: @translucent-white2;
+            
+            //min-height: 10vh;
+            
+            .brand {
+                font-family: 'Exo 2', sans-serif;
+                font-weight: 300;
+                font-size: 60px;
+                line-height: 0.75;
+                
+                small {
+                    font-size: 30px;
+                }
+            }
+        }
+        
+        .main-content {
+            
+            .controls {
+                
+                textarea {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    min-width: 50vw;
+                }
+                
+                .doodads {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    min-width: 15vw;
+                }
+            }
+            .result {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 15px;
+                margin-bottom: 0px;
+                padding-top: 5px;
+                padding-bottom: 15px;
+                background: @translucent-white2;
+                
+                
+                .prefix {
+                    font-family: @native-font;
+                    font-weight: 400;
+                    font-size: 1.25em;
+                }
+                .value {
+                    font-family: "Oswald", sans-serif;
+                    font-weight: 400;
+                    font-size: 2.25em;
+                }
+            }
+            
+        }
+        
+        .footer {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            background: @translucent-white2;
+            
+            //min-height: 10vh;
+            
+            .author {
+                font-family: "Open Sans", sans-serif;
+                font-weight: 700;
+                font-size: 18px; 
+                
+                .love {
+                    font-size: 1.75em;
+                    color: rgb(240, 147, 212);
+                    position: relative;
+                    top: 0.09375em;
+                    
+                }
+            }
+        }
+        
+    }
+
+}
+
+/* Large desktops and laptops */
+@media(min-width:1200px){
+    //
+}
+
+/* Portrait tablets and medium desktops */
+@media(min-width:992px)and(max-width:1199px){
+    //
+}
+
+/* Portrait tablets and small desktops */
+@media(min-width:768px)and(max-width:991px){
+    //
+}
+
+/* Landscape phones and portrait tablets */
+@media(max-width:767px){
+    //
+}
+
+/* Landscape phones and smaller */
+@media(max-width:480px){
+    //
+}
+
+//Debugging purposes
+//* { outline: 2px dotted red }
+//* * { outline: 2px dotted green }
+//* * * { outline: 2px dotted orange }
+//* * * * { outline: 2px dotted blue }
+//* * * * * { outline: 1px solid red }
+//* * * * * * { outline: 1px solid green }
+//* * * * * * * { outline: 1px solid orange }
+//* * * * * * * * { outline: 1px solid blue }
