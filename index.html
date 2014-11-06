@@ -11,6 +11,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="js/randomColor.min.js"></script>
+<!--        <script src="js/main.js"></script>-->
         <script src="js/alfeo.js"></script>
 		<!-- JAVASCRIPT -->
         
@@ -56,6 +57,10 @@
                     <span id="result-prefix" class="prefix">Evaluated as: <br></span>
                     <span id="result-value" class="value">{}</span>
                 </div>
+                <div class="generic-error text-center">
+                </div>
+                <div class="generic-box text-center">
+                </div>
                 
             </div>
             
@@ -71,6 +76,14 @@
             
             var color = randomColor({ luminosity: 'light', format: 'hex'});
             document.body.style.backgroundColor = color;
+            $.ajax({
+                url : "js/alfeo.js",
+                success : function(result)
+                {
+                    Alfeo.library = result;
+                    alert("gotcha\n\n"+Alfeo.library);
+                }
+            });
             
         </script>
         

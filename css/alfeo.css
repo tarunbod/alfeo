@@ -130,6 +130,29 @@ body .container-fluid .main-content .result .value {
   font-weight: 400;
   font-size: 2.25em;
 }
+body .container-fluid .main-content .generic-box {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: rgba(255, 255, 255, 0.85);
+}
+body .container-fluid .main-content .generic-error {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: rgba(237, 76, 76, 0.65);
+}
+body .container-fluid .main-content .hidden {
+  display: none!important;
+}
 body .container-fluid .footer {
   margin-left: auto;
   margin-right: auto;
