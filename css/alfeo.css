@@ -43,6 +43,9 @@
 .visible {
   visibility: visible;
 }
+.hidden {
+  display: none;
+}
 body {
   overflow-x: hidden;
   color: #323232;
@@ -149,6 +152,16 @@ body .container-fluid .main-content .generic-error {
   padding-top: 10px;
   padding-bottom: 10px;
   background: rgba(237, 76, 76, 0.65);
+}
+body .container-fluid .main-content .generic-error .errorname {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.25em;
+  color: #f0f0f0;
+}
+body .container-fluid .main-content .generic-error .errormessage {
+  font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+  font-size: 1.0em;
+  color: #f0f0f0;
 }
 body .container-fluid .main-content .hidden {
   display: none!important;

@@ -50,17 +50,19 @@
                 
                     <textarea id="textarea-main" rows="10"></textarea>
                     
-                    <button class="doodads" type="button" onclick="javascript:Alfeo.go();">Button</button>
+                    <button class="doodads" type="button" onclick="javascript:Alfeo();">Button</button>
                     
+                </div>
+                <div id="errorbox" class="generic-error text-center hidden">
                 </div>
                 <div class="result text-center">
                     <span id="result-prefix" class="prefix">Evaluated as: <br></span>
                     <span id="result-value" class="value">{}</span>
                 </div>
-                <div class="generic-error text-center">
-                </div>
+<!--
                 <div class="generic-box text-center">
                 </div>
+-->
                 
             </div>
             
@@ -80,8 +82,8 @@
                 url : "js/alfeo.js",
                 success : function(result)
                 {
-                    Alfeo.library = result;
-                    alert("gotcha\n\n"+Alfeo.library);
+                    api = result;
+                    //alert(api);
                 }
             });
             
