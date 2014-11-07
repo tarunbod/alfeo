@@ -12,7 +12,8 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="js/randomColor.min.js"></script>
 <!--        <script src="js/main.js"></script>-->
-        <script src="js/alfeo.js"></script>
+        <script src="js/alfeo.min.js"></script>
+        <script src="js/sweet-alert.min.js"></script>
 		<!-- JAVASCRIPT -->
         
         <!-- 3RD PARTY CSS -->
@@ -79,13 +80,14 @@
             var color = randomColor({ luminosity: 'light', format: 'hex'});
             document.body.style.backgroundColor = color;
             $.ajax({
-                url : "js/alfeo.js",
+                url : "js/alfeo.min.js",
                 success : function(result)
                 {
                     api = result;
                     //alert(api);
                 }
             });
+            
             
         </script>
         

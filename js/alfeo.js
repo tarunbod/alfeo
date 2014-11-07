@@ -1,6 +1,6 @@
 function Alfeo()
 {
-    var cmd = api + document.getElementById("textarea-main").value;
+    var cmd = api + "\n" + document.getElementById("textarea-main").value;
     try {
         var myInterpreter = new Interpreter(cmd);
         myInterpreter.run();
@@ -16,8 +16,6 @@ function Alfeo()
 }
 
 var api = new String();
-
-
 
 function factorial(n) {
     var b = 1;
