@@ -14,6 +14,7 @@
 <!--        <script src="js/main.js"></script>-->
         <script src="js/alfeo.min.js"></script>
         <script src="js/sweet-alert.min.js"></script>
+        <script src="js/markdown.min.js"></script>
 		<!-- JAVASCRIPT -->
         
         <!-- 3RD PARTY CSS -->
@@ -49,21 +50,25 @@
                         <option value="adv_eval">Advanced evaluation (Raw JavaScript)</option>
                     </select>
                 
-                    <textarea id="textarea-main" rows="10"></textarea>
+                    <textarea id="textarea-main" rows="10" placeholder="// If you're stuck, try pressing the help button."></textarea>
                     
-                    <button class="doodads" type="button" onclick="javascript:Alfeo();">Button</button>
+                    <div class="button-box text-center">
+                        <div id="evalbutton" class="button text-center" type="button" onclick="javascript:Alfeo();">Evaluate</div>
+                    
+                    <div id="helpbutton" class="button text-center" type="button" onclick="javascript:help();">Show README</div>
+                    </div>
                     
                 </div>
                 <div id="errorbox" class="generic-error text-center hidden">
                 </div>
+                
                 <div class="result text-center">
                     <span id="result-prefix" class="prefix">Evaluated as: <br></span>
                     <span id="result-value" class="value">{}</span>
                 </div>
-<!--
-                <div class="generic-box text-center">
+                
+                <div id="helpbox" class="generic-box text-center hidden">
                 </div>
--->
                 
             </div>
             
@@ -84,6 +89,14 @@
                 success : function(result)
                 {
                     api = result;
+                    //alert(api);
+                }
+            });
+            $.ajax({
+                url : "README.md",
+                success : function(result)
+                {
+                    helpmarkdown = result;
                     //alert(api);
                 }
             });

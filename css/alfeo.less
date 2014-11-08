@@ -15,6 +15,8 @@
 @translucent-black: rgba(80, 80, 80, 0.65);
 @translucent-white2: rgba(255,255,255,0.85);
 @translucent-black2: rgba(80, 80, 80, 0.8);
+@light-blue: rgba(192, 220, 255, 0.85);
+@translucent-blue: rgba(76, 150, 237, 0.8);
 @translucent-red: rgba(237, 76, 76, 0.8);
 
 @healthy-white: rgb(240,240,240);
@@ -48,6 +50,8 @@ body {
             margin-right: auto;
             margin-top: 0px;
             margin-bottom: 15px;
+            padding-left: 10px;
+            padding-right: 10px;
             padding-top: 25px;
             padding-bottom: 25px;
             background: @translucent-white2;
@@ -61,7 +65,7 @@ body {
                 line-height: 0.75;
                 
                 small {
-                    font-size: 30px;
+                    //font-size: 30px;
                 }
             }
         }
@@ -76,7 +80,8 @@ body {
                     margin-right: auto;
                     margin-top: 10px;
                     margin-bottom: 10px;
-                    min-width: 50vw;
+                    //min-width: 50vw;
+                    resize: none;
                 }
                 
                 .doodads {
@@ -87,12 +92,41 @@ body {
                     margin-bottom: 10px;
                     min-width: 15vw;
                 }
+                .button-box {
+                    max-width: 75vw;
+                    margin-left: auto;
+                    margin-right: auto;
+                    .button {
+                        display: inline-block;
+                        background: @translucent-white2;
+                        border-radius: 5px;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        margin-left: 0.5em;
+                        margin-right: 0.5em;
+                        //font-size: 1.8em;
+                        font-family: "AvenirNextCondensed-DemiBold", "Segoe UI Semibold", sans-serif;
+                        font-weight: 700;
+                        @bs: 0.1em;
+                        box-shadow: 0px @bs 0px rgba(50,50,50,0.8);
+                        &:hover {
+                            position: relative;
+                            top: @bs;
+                            background: @light-blue;
+                            box-shadow: 0px 0em 0px rgba(50,50,50,0.0);
+                            .color-transition;
+                        }
+                    }
+                    
+                }
             }
             .result {
                 margin-left: auto;
                 margin-right: auto;
                 margin-top: 15px;
-                margin-bottom: 0px;
+                margin-bottom: 15px;
                 padding-top: 5px;
                 padding-bottom: 15px;
                 background: @translucent-white2;
@@ -107,6 +141,7 @@ body {
                     font-family: "Oswald", sans-serif;
                     font-weight: 400;
                     font-size: 2.25em;
+                    word-wrap: break-word;
                 }
             }
             .generic-box {
@@ -140,6 +175,7 @@ body {
                     color: @healthy-white;
                 }
             }
+            
             .hidden {
                 display: none!important;
             }
@@ -176,37 +212,49 @@ body {
 
 }
 
-/* Large desktops and laptops */
-@media(min-width:1200px){
-    //
-}
-
-/* Portrait tablets and medium desktops */
-@media(min-width:992px)and(max-width:1199px){
-    //
-}
-
-/* Portrait tablets and small desktops */
-@media(min-width:768px)and(max-width:991px){
-    //
-}
-
-/* Landscape phones and portrait tablets */
-@media(max-width:767px){
-    //
-}
+///* Large desktops and laptops */
+//@media(min-width:1200px){
+//    .brand{small{font-size: 30px;}}
+//}
+//
+///* Portrait tablets and medium desktops */
+//@media(min-width:992px)and(max-width:1199px){
+//    .brand{small{font-size: 30px;}}
+//}
+//
+///* Portrait tablets and small desktops */
+//@media(min-width:768px)and(max-width:991px){
+//    .brand{small{font-size: 30px;}}
+//}
+//
+///* Landscape phones and portrait tablets */
+//@media(max-width:767px){
+//    .brand{small{font-size: 30px;}}
+//}
 
 /* Landscape phones and smaller */
-@media(max-width:480px){
-    //
+@media(min-width:415px){
+    .brand{small{font-size: 30px;}}
+    .button{font-size: 1.8em;}
+    textarea {min-width: 50vw;}
+    #helpbox{padding-left: 10vw;padding-right: 10vw;}
 }
 
-//Debugging purposes
-//* { outline: 2px dotted red }
-//* * { outline: 2px dotted green }
-//* * * { outline: 2px dotted orange }
-//* * * * { outline: 2px dotted blue }
-//* * * * * { outline: 1px solid red }
-//* * * * * * { outline: 1px solid green }
-//* * * * * * * { outline: 1px solid orange }
-//* * * * * * * * { outline: 1px solid blue }
+@media(max-width:414px){ //iPhone 6 Plus and above (including desktops, which have no problem)
+    .brand{small{font-size: 30px;}}
+    .button{font-size: 1.7em;}
+    textarea {min-width: 75vw;}
+    #helpbox{padding-left: 10vw;padding-right: 10vw;}
+}
+@media(max-width:375px){ //iPhone 6
+    .brand{small{font-size: 25px;}}
+    .button{font-size: 1.5em;}
+}
+@media(max-width:360px){ //Standard for Android
+    .brand{small{font-size: 25px;}}
+    .button{font-size: 1.5em;}
+}
+@media(max-width:320px){ //iPhone 5 and below
+    .brand{small{font-size: 20px;}}
+    .button{font-size: 1.3em;}
+}

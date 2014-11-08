@@ -1,21 +1,48 @@
-function Alfeo()
-{
-    var cmd = api + "\n" + document.getElementById("textarea-main").value;
-    try {
-        var myInterpreter = new Interpreter(cmd);
-        myInterpreter.run();
-        $("#errorbox").addClass("hidden");
+function Alfeo() {
+    var textarea = document.getElementById("textarea-main");
+    if(textarea.value == undefined || textarea.value == "") {
+        sweetAlert({
+            title: "You didn't type anything in!",
+            text: "In order for Alfeo to evaluate anything, you have to type something in. If you're stuck, try pressing the help button.",
+            type: "warning"
+        });
     }
-    catch(err){
-        $("#errorbox").removeClass("hidden");
-        document.getElementById("errorbox").innerHTML = ("<span class=\"errorname\">"+err.name+"</span><br><span class=\"errormessage\">"+err.message+"</span>");
+    else {
+        var cmd = api + "\n" + textarea.value;
+        try {
+            var myInterpreter = new Interpreter(cmd);
+            myInterpreter.run();
+            $("#errorbox").addClass("hidden");
+        }
+        catch(err){
+            $("#errorbox").removeClass("hidden");
+            document.getElementById("errorbox").innerHTML = ("<span class=\"errorname\">"+err.name+"</span><br><span class=\"errormessage\">"+err.message+"</span>");
+        }
+        var r = document.getElementById("result-value");
+        r.innerHTML = myInterpreter.value;
     }
-    
-    var r = document.getElementById("result-value");
-    r.innerHTML = myInterpreter.value;
 }
 
 var api = new String();
+var helpmarkdown = new String();
+var helpShown =  false;
+
+function help(){
+    var box = document.getElementById("helpbox");
+    var activator = document.getElementById("helpbutton");
+    
+    box.innerHTML = markdown.toHTML(helpmarkdown);
+    if(helpShown == false){
+        $("#helpbox").removeClass("hidden");
+        activator.innerHTML = "Hide README";
+        helpShown = true;
+    }
+    else {
+        $("#helpbox").addClass("hidden");
+        activator.innerHTML = "Show README";
+        helpShown = false;
+    }
+}
 
 function factorial(n) {
     var b = 1;
