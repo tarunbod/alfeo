@@ -44,6 +44,7 @@ body {
     .container-fluid {
         padding-right: 0px;
         padding-left: 0px;
+        .no-select;
         
         .header {
             margin-left: auto;
@@ -142,6 +143,7 @@ body {
                     font-weight: 400;
                     font-size: 2.25em;
                     word-wrap: break-word;
+                    .text-select;
                 }
             }
             .generic-box {
@@ -193,10 +195,23 @@ body {
             
             //min-height: 10vh;
             
+            .attributions {
+                font-family: @native-font;
+                font-weight: 700;
+                font-size: 24px;
+                &:before {
+                    content: "[ ";
+                }
+                &:after {
+                    content: " ]";
+                }
+            }
+            
             .author {
                 font-family: "Open Sans", sans-serif;
                 font-weight: 700;
-                font-size: 18px; 
+                font-size: 18px;
+                
                 
                 .love {
                     font-size: 1.75em;

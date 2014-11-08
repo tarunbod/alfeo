@@ -15,6 +15,28 @@
   -o-user-select: none;
   user-select: none;
 }
+.text-select {
+  -webkit-user-select: text;
+  /* Chrome/Safari */
+  -moz-user-select: text;
+  /* Firefox */
+  -ms-user-select: text;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: text;
+  user-select: text;
+}
+.yes-select {
+  -webkit-user-select: all;
+  /* Chrome/Safari */
+  -moz-user-select: all;
+  /* Firefox */
+  -ms-user-select: all;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: all;
+  user-select: all;
+}
 .all-color-transition {
   -webkit-transition: color 500ms, border 500ms, border-color 500ms;
   -ms-transition: color 500ms, border 500ms, border-color 500ms;

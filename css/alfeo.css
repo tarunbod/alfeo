@@ -15,6 +15,28 @@
   -o-user-select: none;
   user-select: none;
 }
+.text-select {
+  -webkit-user-select: text;
+  /* Chrome/Safari */
+  -moz-user-select: text;
+  /* Firefox */
+  -ms-user-select: text;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: text;
+  user-select: text;
+}
+.yes-select {
+  -webkit-user-select: all;
+  /* Chrome/Safari */
+  -moz-user-select: all;
+  /* Firefox */
+  -ms-user-select: all;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: all;
+  user-select: all;
+}
 .all-color-transition {
   -webkit-transition: color 500ms, border 500ms, border-color 500ms;
   -ms-transition: color 500ms, border 500ms, border-color 500ms;
@@ -93,6 +115,15 @@ body a:active {
 body .container-fluid {
   padding-right: 0px;
   padding-left: 0px;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
 }
 body .container-fluid .header {
   margin-left: auto;
@@ -176,6 +207,15 @@ body .container-fluid .main-content .result .value {
   font-weight: 400;
   font-size: 2.25em;
   word-wrap: break-word;
+  -webkit-user-select: text;
+  /* Chrome/Safari */
+  -moz-user-select: text;
+  /* Firefox */
+  -ms-user-select: text;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: text;
+  user-select: text;
 }
 body .container-fluid .main-content .generic-box {
   display: block;
@@ -218,6 +258,17 @@ body .container-fluid .footer {
   padding-top: 25px;
   padding-bottom: 25px;
   background: rgba(255, 255, 255, 0.85);
+}
+body .container-fluid .footer .attributions {
+  font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+body .container-fluid .footer .attributions:before {
+  content: "[ ";
+}
+body .container-fluid .footer .attributions:after {
+  content: " ]";
 }
 body .container-fluid .footer .author {
   font-family: "Open Sans", sans-serif;

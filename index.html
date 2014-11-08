@@ -21,9 +21,11 @@
         <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Exo+2:300,400|Open+Sans:700,400|Oswald:400' rel='stylesheet' type='text/css'>
         <link href="css/sweet-alert.css" rel="stylesheet" type="text/css">
+        <link href="css/octicons/octicons.css" rel="stylesheet">
         <!-- 3RD PARTY CSS -->
         
         <!-- CSS -->
+        <link href="css/animations.css" rel="stylesheet" type="text/css">
         <link href="css/alfeo.css" rel="stylesheet" type="text/css">
         <!-- CSS -->
         
@@ -73,8 +75,9 @@
             </div>
             
             <div class="footer text-center">
-                
-                <span class="author">Made with <span class="love">&hearts;</span> and JavaScript by <a href="http://austinj.net/">Austin Jackson</a></span>
+                <span class="attributions"><a href="http://github.com/MacPhage/alfeo/blob/gh-pages/ATTRIBUTIONS.md">Attributions</a></span><br>
+                <span class="author">Made with <span class="love">&hearts;</span> and JavaScript by <a href="http://austinj.net/">Austin Jackson</a></span><br><br>
+                <a href="http://github.com/MacPhage/alfeo"><span class="mega-octicon octicon-mark-github"></span></a
                 
             </div>
         </div>
@@ -84,6 +87,7 @@
             
             var color = randomColor({ luminosity: 'light', format: 'hex'});
             document.body.style.backgroundColor = color;
+            var loved = false;
             $.ajax({
                 url : "js/alfeo.min.js",
                 success : function(result)
