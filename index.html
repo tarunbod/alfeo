@@ -85,7 +85,13 @@
         
         <script>
             
-            var color = randomColor({ luminosity: 'light', format: 'hex'});
+            var color;
+            if(Math.random() >= 0.8){
+                color = randomColor({ luminosity: 'bright', format: 'hex'});
+            }
+            else {
+                color = randomColor({ luminosity: 'light', format: 'hex'});
+            }
             document.body.style.backgroundColor = color;
             var loved = false;
             $.ajax({
