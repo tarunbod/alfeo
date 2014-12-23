@@ -117,7 +117,13 @@
                 }
             });
             
-            
+            // Use ctrl + enter to evaluate
+            $("#textarea-main").keypress(function(e) {
+            	var keyCode = e.keyCode || e.charCode || e.which;
+            	if (keyCode == 13 && e.ctrlKey) {
+            	    Alfeo();
+            	}
+            })
         </script>
         
         
