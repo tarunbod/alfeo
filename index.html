@@ -5,14 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 		<title>Alfeo</title>
-		
+
 		<!--[if IE 8]>
 		<script>
 			alert("You are viewing this website with Internet Explorer.\nPlease be advised that this website does NOT support Internet Explorer.\nSome features may not work correctly, or at all.\nPlease use something else like Google Chrome or Firefox, they're better."
 		</script>
 		<![endif]-->
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
-		
+
 		<!-- JAVASCRIPT -->
 		<script src="js/acorn_interpreter.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
@@ -23,24 +23,24 @@
         <script src="js/sweet-alert.min.js"></script>
         <script src="js/markdown.min.js"></script>
 		<!-- JAVASCRIPT -->
-        
+
         <!-- 3RD PARTY CSS -->
         <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Exo+2:300,400|Open+Sans:700,400|Oswald:400' rel='stylesheet' type='text/css'>
         <link href="css/sweet-alert.css" rel="stylesheet" type="text/css">
         <link href="css/octicons/octicons.css" rel="stylesheet">
         <!-- 3RD PARTY CSS -->
-        
+
         <!-- CSS -->
         <link href="css/alfeo.css" rel="stylesheet" type="text/css">
         <!-- CSS -->
-        
-        
-		
+
+
+
 	</head>
 
 	<body>
-		
+
         <div class="container-fluid">
             <div class="header text-center">
 
@@ -48,49 +48,50 @@
                     Alfeo<br>
                     <small>A mathematical prototype.</small>
                 </h1>
-                
+
             </div>
             <div class="main-content">
-                
+
                 <div class="controls">
-                    
+
                     <select class="doodads">
                         <option value="adv_eval">Advanced evaluation (Raw JavaScript)</option>
                     </select>
-                
+
                     <textarea id="textarea-main" rows="10" placeholder="// If you're stuck, try pressing the README button."></textarea>
-                    
+
                     <div class="button-box text-center">
                         <div id="evalbutton" class="button text-center" type="button" onclick="javascript:Alfeo();">Evaluate</div>
-                    
+
                     <div id="helpbutton" class="button text-center" type="button" onclick="javascript:help();">Show README</div>
                     </div>
-                    
+
                 </div>
                 <div id="errorbox" class="generic-error text-center hidden">
                 </div>
-                
+
                 <div class="result text-center">
                     <span id="result-prefix" class="prefix">Evaluated as: <br></span>
                     <span id="result-value" class="value">{}</span>
+					<p id="result-hint" class="hint">You can use the CTRL+Enter keystroke to automatically calculate.</p>
                 </div>
-                
+
                 <div id="helpbox" class="generic-box text-center hidden">
                 </div>
-                
+
             </div>
-            
+
             <div class="footer text-center">
                 <span class="attributions"><a href="http://github.com/MacPhage/alfeo/blob/gh-pages/ATTRIBUTIONS.md">Attributions</a></span><br>
                 <span class="author">Made with <span class="love">&hearts;</span> and JavaScript by <a href="http://austinj.net/">Austin Jackson</a><br>Check it out on <a href="http://github.com/MacPhage/alfeo">Github</a>!</span><br><br>
-                
-                
+
+
             </div>
         </div>
-        
-        
+
+
         <script>
-            
+
             var color;
             if(Math.random() >= 0.8){
                 color = randomColor({ luminosity: 'bright', format: 'hex'});
@@ -116,7 +117,7 @@
                     //alert(api);
                 }
             });
-            
+
             // Use ctrl + enter to evaluate
             $("#textarea-main").keypress(function(e) {
             	var keyCode = e.keyCode || e.charCode || e.which;
@@ -124,9 +125,18 @@
             	    Alfeo();
             	}
             })
+
+			$(document).ready(function(){
+				sweetAlert({
+					title: "Welcome to Alfeo!",
+					text: "In order for Alfeo to evaluate anything, you have to type something in. If you're stuck, try pressing the help button.",
+					type: "warning"
+				});
+			});
+
         </script>
-        
-        
+
+
 	</body>
 
 </html>
