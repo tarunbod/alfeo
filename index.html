@@ -83,7 +83,7 @@
 
             <div class="footer text-center">
                 <span class="attributions"><a href="http://github.com/MacPhage/alfeo/blob/gh-pages/ATTRIBUTIONS.md">Attributions</a></span><br>
-                <span class="author">Made with <span class="love">&hearts;</span> and JavaScript by <a href="http://austinj.net/">Austin Jackson</a><br>Check it out on <a href="http://github.com/MacPhage/alfeo">Github</a>!</span><br><br>
+                <span class="author">Made with <span class="love">&hearts;</span> and <span id="codelang"></span> by <a href="http://austinj.net/">Austin Jackson</a><br>Check it out on <a href="http://github.com/MacPhage/alfeo">Github</a>!</span><br><br>
 
 
             </div>
@@ -118,7 +118,19 @@
             	if (keyCode == 13 && e.ctrlKey) {
             	    Alfeo();
             	}
-            })
+            });
+
+			var lang = document.getElementById("codelang");
+			var rand = Math.round(Math.random() * 100);
+			if(rand >= 50){
+				lang.innerHTML = "JavaScript";
+			}
+			else if(rand <= 10){
+				lang.innerHTML = "HTML";
+			}
+			else {
+				lang.innerHTML = "CSS";
+			}
 
 			$(document).ready(function(){
 				sweetAlert({
@@ -127,6 +139,7 @@
 					type: "info"
 				});
 			});
+
 
         </script>
 
