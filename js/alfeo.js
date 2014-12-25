@@ -1,6 +1,6 @@
 function Alfeo() {
     var textarea = document.getElementById("textarea-main");
-    if(textarea.value == undefined || textarea.value == "") {
+    if(textarea.value === undefined || textarea.value === "") {
         sweetAlert({
             title: "You didn't type anything in!",
             text: "In order for Alfeo to evaluate anything, you have to type something in. If you're stuck, try pressing the help button.",
@@ -9,8 +9,9 @@ function Alfeo() {
     }
     else {
         var cmd = api + "\n" + textarea.value;
+        var myInterpreter;
         try {
-            var myInterpreter = new Interpreter(cmd);
+            myInterpreter = new Interpreter(cmd);
             myInterpreter.run();
             $("#errorbox").addClass("hidden");
         }
@@ -23,16 +24,16 @@ function Alfeo() {
     }
 }
 
-var api = new String();
-var helpmarkdown = new String();
+var api;
+var helpmarkdown;
 var helpShown =  false;
 
 function help(){
     var box = document.getElementById("helpbox");
     var activator = document.getElementById("helpbutton");
-    
-    box.innerHTML = markdown.toHTML(helpmarkdown);
-    if(helpShown == false){
+
+    //box.innerHTML = markdown.toHTML(helpmarkdown);
+    if(helpShown === false){
         $("#helpbox").removeClass("hidden");
         activator.innerHTML = "Hide README";
         helpShown = true;

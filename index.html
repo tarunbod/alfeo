@@ -19,7 +19,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="js/randomColor.min.js"></script>
 <!--        <script src="js/main.js"></script>-->
-        <script src="js/alfeo.min.js"></script>
+        <script src="js/alfeo.js"></script>
         <script src="js/sweet-alert.min.js"></script>
         <script src="js/markdown.min.js"></script>
 		<!-- JAVASCRIPT -->
@@ -77,6 +77,9 @@
                 </div>
 
                 <div id="helpbox" class="generic-box text-center hidden">
+
+					<h3 class="readme"><a href="https://github.com/MacPhage/alfeo/blob/gh-pages/README.md">Please visit Github for helpful, formatted, well-written instructions on how to use.</a></h3>
+
                 </div>
 
             </div>
@@ -102,7 +105,7 @@
             document.body.style.backgroundColor = color;
             var loved = false;
             $.ajax({
-                url : "js/alfeo.min.js",
+                url : "js/alfeo.js",
                 success : function(result)
                 {
                     api = result;
