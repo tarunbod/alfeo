@@ -1,0 +1,32 @@
+{
+    "name": "Alfeo",
+    "description": "A mathematical prototype http://austinj.net/alfeo",
+    "version": "0.2.0",
+    "author": "Austin Jackson <theaustinjackson@gmail.com>",
+    "contributors": [
+        {
+            "name": "Austin Jackson",
+            "email": "theaustinjackson@gmail.com"
+        },
+        {
+            "name": "Tarun Boddupalli",
+            "email": "tarunbgamer@gmail.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:MacPhage/alfeo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/MacPhage/alfeo/issues"
+    },
+    "keywords": [
+        "alfeo"
+    ],
+    "license": "Apache",
+    "dependencies": {
+        "JS-Interpreter": "NeilFraser/JS-Interpreter",
+        "SweetAlert": "t4t5/sweetalert",
+        "randomcolor": "0.1.1"
+    }
+}
