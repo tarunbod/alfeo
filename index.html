@@ -92,13 +92,7 @@
 
         <script>
 
-            var color;
-            if(Math.random() >= 0.8){
-                color = randomColor({ luminosity: 'bright', format: 'hex'});
-            }
-            else {
-                color = randomColor({ luminosity: 'light', format: 'hex'});
-            }
+            var color = randomColor({ luminosity: 'light', format: 'hex'});
             document.body.style.backgroundColor = color;
             var loved = false;
             $.ajax({
@@ -129,8 +123,8 @@
 			$(document).ready(function(){
 				sweetAlert({
 					title: "Welcome to Alfeo!",
-					text: "In order for Alfeo to evaluate anything, you have to type something in. If you're stuck, try pressing the help button.",
-					type: "warning"
+					text: "If you would like some help getting started, please checkout the README. There's some nice neat instructions over there. Thanks for stopping by!",
+					type: "info"
 				});
 			});
 
