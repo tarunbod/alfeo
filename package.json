@@ -27,6 +27,7 @@
     "dependencies": {
         "JS-Interpreter": "NeilFraser/JS-Interpreter",
         "SweetAlert": "t4t5/sweetalert",
-        "randomcolor": "0.1.1"
+        "randomcolor": "0.1.1",
+        "ace":"ajaxorg/ace-builds"
     }
 }

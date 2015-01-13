@@ -18,8 +18,16 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="node_modules/randomcolor/randomColor.js"></script>
-        <script src="js/alfeo.js"></script>
         <script src="node_modules/sweetalert/lib/sweet-alert.min.js"></script>
+		<script src="node_modules/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/alfeo.core.js"></script>
+		<script src="js/alfeo.util.js"></script>
+		<script src="js/alfeo.math.js"></script>
+		<script>
+			var Alfeo = new Alfeo();
+		</script>
+
 		<!-- JAVASCRIPT -->
 
         <!-- 3RD PARTY CSS -->
@@ -55,12 +63,12 @@
                         <option value="adv_eval">Advanced evaluation (Raw JavaScript)</option>
                     </select>
 
-                    <textarea id="textarea-main" rows="10" placeholder="// If you're stuck, try pressing the README button."></textarea>
+                    <div id="editor" class="editor" type="text" contenteditable="true">//Hello, World!</div>
 
                     <div class="button-box text-center">
-                        <div id="evalbutton" class="button text-center" type="button" onclick="javascript:Alfeo();">Evaluate</div>
+                        <div id="evalbutton" class="button text-center" type="button" onclick="javascript:Alfeo.evaluate();">Evaluate</div>
 
-                    <div id="helpbutton" class="button text-center" type="button" onclick="javascript:help();">Show README</div>
+                    <div id="helpbutton" class="button text-center" type="button" onclick="javascript:Alfeo.readme();">Show README</div>
                     </div>
 
                 </div>
@@ -113,7 +121,7 @@
             });
 
             // Use ctrl + enter to evaluate
-            $("#textarea-main").keypress(function(e) {
+            $("#editor").keypress(function(e) {
             	var keyCode = e.keyCode || e.charCode || e.which;
             	if (keyCode == 13 && e.ctrlKey) {
             	    Alfeo();
@@ -133,12 +141,16 @@
 			}
 
 			$(document).ready(function(){
-				sweetAlert({
+				/*sweetAlert({
 					title: "Welcome to Alfeo!",
 					text: "If you would like some help getting started, please checkout the README. There's some nice neat instructions over there. Thanks for stopping by!",
 					type: "info"
-				});
+				});*/
 			});
+
+			var editor = ace.edit("editor");
+			editor.setTheme("ace/theme/monokai");
+			editor.getSession().setMode("ace/mode/javascript");
 
 
         </script>
