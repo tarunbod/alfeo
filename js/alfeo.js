@@ -70,6 +70,10 @@ function squareroot(a) {
 function nroot(degree,radicand){ // cuberoot of 8 would be nroot(3,8)
     return Math.pow(Math.abs(radicand), (1.0 / degree));
 }
+
+function sci(num) { // returns a number in scientific notation
+    return num.toExponential().replace("e+", " x 10^"); 
+} 
 //function quadraticFormula(a,b,c){
 //    var s1 = NaN, s2 = NaN;
 //    try{
