@@ -81,3 +81,17 @@ function sci(num) { // returns a number in scientific notation
 //    }
 //    catch(Exception)
 //}
+
+//Physics 
+
+function findVf(vi,a,t) {
+    return vi+(a*t)
+}
+
+function findVf2(vi,a,d,u) {
+    if(u === undefined) {
+        u = 1;
+    }
+    return Math.sqrt( (vi*vi) + (2*a*d*u));
+}
+
