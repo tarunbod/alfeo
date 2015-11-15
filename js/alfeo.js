@@ -55,18 +55,28 @@ function factorial(n) {
     return b;
 }
 
-function pow(a,b) {
-    return Math.pow(a,b);
-}
+/**
+ * Imports all of the functions in the Math object (e.g Math.cos, Math.sin)
+ * into the global scope, so one doesn't have to type "Math." before every 
+ * mathematical function. Typing just the function name will work.
+ */
+(function() {
+    var props = Object.getOwnPropertyNames(Math);
+    for (var prop in props) {
+      if (typeof Math[props[prop]] === "function") {
+        window[props[prop]] = Math[props[prop]];
+      }
+    }
+})();
+
 function power(a,b) {
-    return Math.pow(a,b);
+    return pow(a,b);
 }
-function sqrt(a) {
-    return Math.sqrt(a);
-}
+
 function squareroot(a) {
-    return Math.sqrt(a);
+    return sqrt(a);
 }
+
 function nroot(degree,radicand){ // cuberoot of 8 would be nroot(3,8)
     return Math.pow(Math.abs(radicand), (1.0 / degree));
 }
