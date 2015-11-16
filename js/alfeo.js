@@ -61,11 +61,9 @@ function factorial(n) {
  * mathematical function. Typing just the function name will work.
  */
 (function() {
-    var props = Object.getOwnPropertyNames(Math);
-    for (var prop in props) {
-      if (typeof Math[props[prop]] === "function") {
-        window[props[prop]] = Math[props[prop]];
-      }
+    var mathFunctions = ["random", "abs", "acos", "asin", "atan", "ceil", "exp", "floor", "log", "round", "sqrt", "atan2", "pow", "max", "min", "imul", "sign", "trunc", "tanh", "asinh", "acosh", "atanh", "hypot", "fround", "clz32", "cbrt", "cos", "sin", "tan", "sinh", "cosh", "log10", "log2", "log1p", "expm1"];
+    for (var mathFunc in mathFunctions) {
+        window[mathFunctions[mathFunc]] = Math[mathFunctions[mathFunc]];
     }
 })();
 
