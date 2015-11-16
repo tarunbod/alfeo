@@ -60,12 +60,10 @@ function factorial(n) {
  * into the global scope, so one doesn't have to type "Math." before every 
  * mathematical function. Typing just the function name will work.
  */
-(function() {
-    var mathFunctions = ["random", "abs", "acos", "asin", "atan", "ceil", "exp", "floor", "log", "round", "sqrt", "atan2", "pow", "max", "min", "imul", "sign", "trunc", "tanh", "asinh", "acosh", "atanh", "hypot", "fround", "clz32", "cbrt", "cos", "sin", "tan", "sinh", "cosh", "log10", "log2", "log1p", "expm1"];
-    for (var mathFunc in mathFunctions) {
-        window[mathFunctions[mathFunc]] = Math[mathFunctions[mathFunc]];
-    }
-})();
+var mathFunctions = ["random", "abs", "acos", "asin", "atan", "ceil", "exp", "floor", "log", "round", "sqrt", "atan2", "pow", "max", "min", "imul", "sign", "trunc", "tanh", "asinh", "acosh", "atanh", "hypot", "fround", "clz32", "cbrt", "cos", "sin", "tan", "sinh", "cosh", "log10", "log2", "log1p", "expm1"];
+for (var mathFunc in mathFunctions) {
+    window[mathFunctions[mathFunc]] = Math[mathFunctions[mathFunc]];
+}
 
 function power(a,b) {
     return pow(a,b);
