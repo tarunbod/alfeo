@@ -1,3 +1,10 @@
+var r = document.getElementById("result-value");
+
+var outputFormat = "normal";
+$("#output_format").on('change', function() {
+    outputFormat = $(this).val();
+});
+
 function Alfeo() {
     var textarea = document.getElementById("textarea-main");
     if(textarea.value === undefined || textarea.value === "") {
@@ -19,8 +26,12 @@ function Alfeo() {
             $("#errorbox").removeClass("hidden");
             document.getElementById("errorbox").innerHTML = ("<span class=\"errorname\">"+err.name+"</span><br><span class=\"errormessage\">"+err.message+"</span>");
         }
-        var r = document.getElementById("result-value");
-        r.innerHTML = myInterpreter.value;
+        
+        var result = myInterpreter.value;
+        if (outputFormat == "sci") {
+            result = sci(result);
+        }
+        r.innerHTML = result;
     }
 }
 
