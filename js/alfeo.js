@@ -28,6 +28,7 @@ function Alfeo() {
         }
         
         var result = myInterpreter.value;
+        console.log(result);
         if (outputFormat == "sci") {
             result = sci(result);
         }
